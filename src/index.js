@@ -1,17 +1,21 @@
+//Import React and ReactDOM libraries
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import faker from 'faker';
+import CommentDetail from './CommentDetail';
+// Create a react component
+const App = () => {
 
+    return (
+        <div>
+            <CommentDetail author="Sam" timeAgo="Today at 4:45PM" comment="Nice Blog Post!" avatar={faker.image.image()}/>
+            <CommentDetail author="Alex" timeAgo="Today at 2:00AM" comment="Love it!" avatar={faker.image.image()}/>
+            <CommentDetail author="Jane" timeAgo="Yesterday at 4:45PM" comment="So inspiring..." avatar={faker.image.image()}/>
+        </div>
+    );
+}
+//Take the react component and show it to screen
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  <App />, 
+  document.querySelector('#root')  
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
